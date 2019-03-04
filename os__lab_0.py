@@ -8,7 +8,8 @@ try:
 
     os.chdir("os_lab_0")
     open("1.txt", "a").close()
-    open("2.py", "a").close()
+    open("2.txt", "a").close()
+    open("3.py", "a").close()
     print("*****    1.txt and 2.py have created in os_lab_0    *****")
 
     print("*****    Last Modified Time    *****")
