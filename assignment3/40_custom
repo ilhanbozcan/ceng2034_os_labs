@@ -1,0 +1,18 @@
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+
+menuentry "My Ubuntu"{
+
+set iso_name = "ubuntu-18.04.2-desktop-amd64.iso"
+set iso_path = "home/ibozcan/Downloads/${iso_name}"
+
+loopback loop (hd0,1)$iso_path
+linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$iso_path noprompt noeject toram --
+initrd (loop)/casper/initrd.lz
+
+
+}
