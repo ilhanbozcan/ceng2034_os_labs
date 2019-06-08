@@ -5,7 +5,7 @@ import threading
 
 
 start = time.time_ns()
-def seperatefiles(start,end,folder = "files/"):
+def seperatefiles(first,last,folder = "files/"):
     png = "89504e470d0a1a0a"
     jpg = "ffd8ffe0"
     mp3 = "494433"
@@ -15,7 +15,7 @@ def seperatefiles(start,end,folder = "files/"):
     os.mkdir("mp3")
     os.mkdir("txt")
 
-    for x in range(start,end):
+    for x in range(first,last):
         file = "file" + str(x)
         with open(folder + file, "rb") as thisfile:
             header = thisfile.read(8)
